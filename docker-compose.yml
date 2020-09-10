@@ -1,0 +1,17 @@
+version: '3' # la version de docker-compose
+
+services:
+  express:
+    build: Practica_microservicios # la carpeta donde esta el dockerfile
+    ports:
+      - "8090:8090" # los puertos donde se levantara la aplicacion
+    links: # depende de otroo servicio
+      - mongo
+    volumes: # mantener la informacion
+      - .:/usr/src/app
+  mongo: 
+    image: mongo # la imagen que docker tiene de MongoDB
+    ports:
+      - "27017:27017" # los puertos donde se levantara la base de datos
+    logging: 
+      driver: none

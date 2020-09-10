@@ -1,8 +1,9 @@
 const mongoose = require('mongoose'); //importamos el paquete de mongoose
 
-const dbConnection = async() => { // como nuestra conexion regresa una promeso usamos el async para poder usar await y convertir nuestra funncion asyncrona en syncrona
+// como nuestra conexion regresa una promeso usamos el async para poder usar await y convertir nuestra funncion asyncrona en syncrona
+const dbConnection = async() => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/microservicio', { //esta es la ruta donde esta nuestro servidor y la base de datos
+        await mongoose.connect('mongodb://mongo/microservicio', { //esta es la ruta donde esta nuestro servidor y la base de datos
             useNewUrlParser: true, //parametros necesarios para la conexion
             useUnifiedTopology: true,
             useCreateIndex: true

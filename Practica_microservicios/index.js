@@ -13,6 +13,6 @@ dbConnection();
 // Rutas
 app.use('/api/sps', require('./routes/chistes')); // middleware para redirigir las rutas
 
-app.listen(3000, () => {
-    console.log('Servidor corriendo en puerto 3000');
+app.listen(8090, () => {
+    console.log('Servidor corriendo en puerto 8090');
 });
